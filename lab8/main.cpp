@@ -1,17 +1,23 @@
-#include <iostream>
+#include<iostream>
+
 int main()
 {
-	long long cur;
-	std::cin >> cur;
+    setlocale(LC_ALL, "rus");
+    long long n;
+    int byte;
+    std::cin >> n;
 
+    char* pb;
+    pb = (char*)&n;
 
-	for (int i = 0; i <= sizeof(cur); i++)
-	{
-		printf("%d ", *(((unsigned char*)&cur) + i));
-	}
-
-	std::cout << std::endl;
-
-	// from −9223372036854775808 to 9223372036854775807 и занимает 8 байт
-
+    for (char* i = pb; i < pb + 4; i++)
+    {
+        byte = (int)*i;
+        if (byte < 0) {
+            std::cout << byte + 256 << " ";
+        }
+        else {
+            std::cout << byte << " ";
+        }
+    }
 }
