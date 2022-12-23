@@ -2,7 +2,7 @@
 
 int main() 
 {
-	long long number;
+	long long n;
 	std::cin >> n;
 	for (int i = 0; i < 8; i++) 
 	{
