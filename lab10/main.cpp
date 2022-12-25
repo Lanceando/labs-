@@ -1,4 +1,4 @@
-﻿// Провайдер и абонент (интернет: тариф скорость цена)
+// Провайдер и абонент (интернет: тариф скорость цена)
 
 #include <iostream>
 #include <string>
@@ -30,7 +30,7 @@ public:
 class Provider 
 {
 private:
-    short int id;
+    unsigned int id;
     std::string provider_title;
     double speed_internet;
     int cost;
@@ -44,7 +44,11 @@ public:
         speed_internet = speed;
         cost = c;
     }
-    ~Provider() {}
+    ~Provider() {
+        for (int i = 0; i < users.size(); i++) {
+            delete users[i];
+        }
+    }
 
     void getProvInfo() // получить информацию о  провайдере
     {
@@ -58,13 +62,15 @@ public:
 
     void showUsers() // Получить абонентов провайдера
     {
-        std::cout << "Пользавтели " << provider_title << ":" << std::endl;
+        std::cout << "Пользователи " << provider_title << ":" << std::endl;
         for (int i = 0; i < users.size(); i++)
         {
             std::cout << users[i]->getName() << std::endl;
         }
         std::cout << std::endl;
     }
+    
+
 };
 
 
@@ -113,5 +119,11 @@ int main()
     provider2->showUsers();
     provider3->showUsers();
     provider4->showUsers();
+
+  
+
+
+
+    
 }
 
