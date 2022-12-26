@@ -7,8 +7,7 @@
 class User 
 {
 private:
-
-    unsigned int id;
+    
     std::string name;
 
 public:
