@@ -119,10 +119,11 @@ int main()
     provider3->showUsers();
     provider4->showUsers();
 
+    delete provider1;
+    delete provider2;
+    delete provider3;
+    delete provider4;
   
-
-
-
     
 }
 
